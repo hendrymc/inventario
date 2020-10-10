@@ -1,0 +1,14 @@
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\bin\Debug\InventarioApp.exe.config
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\bin\Debug\InventarioApp.exe
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\bin\Debug\InventarioApp.pdb
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.csprojAssemblyReference.cache
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.Properties.Resources.resources
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.csproj.GenerateResource.cache
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.csproj.CoreCompileInputs.cache
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.exe
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.pdb
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.Inicio.resources
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.ArticulosListar.resources
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.ArticulosGuardar.resources
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.TipoInventarioGuardar.resources
+C:\Users\hendr\source\repos\InventarioApp\InventarioApp\obj\Debug\InventarioApp.TipoInventarioListar.resources
