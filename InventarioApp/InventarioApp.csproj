@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>InventarioApp</RootNamespace>
     <AssemblyName>InventarioApp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlmacenGuardar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenGuardar.Designer.cs">
+      <DependentUpon>AlmacenGuardar.cs</DependentUpon>
+    </Compile>
     <Compile Include="ArticulosGuardar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +64,36 @@
     </Compile>
     <Compile Include="ArticulosListar.Designer.cs">
       <DependentUpon>ArticulosListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlmacen.Designer.cs">
+      <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExistenciaAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExistenciaAlmacen.Designer.cs">
+      <DependentUpon>frmExistenciaAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransaccion.Designer.cs">
+      <DependentUpon>frmTransaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuardarExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuardarExistencia.Designer.cs">
+      <DependentUpon>GuardarExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuardarTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuardarTransaccion.Designer.cs">
+      <DependentUpon>GuardarTransaccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -79,11 +116,29 @@
     <Compile Include="TipoInventarioListar.Designer.cs">
       <DependentUpon>TipoInventarioListar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlmacenGuardar.resx">
+      <DependentUpon>AlmacenGuardar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ArticulosGuardar.resx">
       <DependentUpon>ArticulosGuardar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ArticulosListar.resx">
       <DependentUpon>ArticulosListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlmacen.resx">
+      <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExistenciaAlmacen.resx">
+      <DependentUpon>frmExistenciaAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransaccion.resx">
+      <DependentUpon>frmTransaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuardarExistencia.resx">
+      <DependentUpon>GuardarExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuardarTransaccion.resx">
+      <DependentUpon>GuardarTransaccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -96,6 +151,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TipoInventarioGuardar.resx">
       <DependentUpon>TipoInventarioGuardar.cs</DependentUpon>

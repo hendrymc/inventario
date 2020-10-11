@@ -13,7 +13,7 @@ namespace InventarioApp
         {
             try
             {
-                con = new SqlConnection("Data Source=.;Initial Catalog=inventariodb;Integrated Security=True");
+                con = new SqlConnection("Data Source=DESKTOP-11AN0PI\\MSSQLSERVER2;Initial Catalog=inventario_db;Integrated Security=True");
                 con.Open();
             }
             catch (Exception ex)
@@ -53,6 +53,59 @@ namespace InventarioApp
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR CONSULTANDO LA BASE DE DATOS. " + ex.Message);
+            }
+        }
+        public void GetAlmacen(DataGridView ItemList)
+        {
+            try
+            {
+                string sql = "select * from Almacen";
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                ItemList.DataSource = dt;
+                ItemList.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR CONSULTANDO LA BASE DE DATOS. " + ex.Message);
+
+            }
+        
+        }
+        public void GetExistenciasAlmacen(DataGridView ItemList)
+        {
+            try
+            {
+                string sql = "select * from ExistenciaAlmacen";
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                ItemList.DataSource = dt;
+                ItemList.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR CONSULTANDO LA BASE DE DATOS. " + ex.Message);
+
+            }
+
+        }
+        public void GetTransaccion(DataGridView ItemList)
+        {
+            try
+            {
+                string sql = "select * from Transaccion";
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                ItemList.DataSource = dt;
+                ItemList.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR CONSULTANDO LA BASE DE DATOS. " + ex.Message);
+
             }
         }
     }

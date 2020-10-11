@@ -19,7 +19,8 @@ namespace InventarioApp
 
         private void existenciasXAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmExistenciaAlmacen exi = new frmExistenciaAlmacen();
+            exi.ShowDialog();
         }
 
         private void artículosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,6 +33,23 @@ namespace InventarioApp
         {
             TipoInventarioListar til = new TipoInventarioListar();
             til.ShowDialog();
+        }
+
+        private void almacenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void almacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAlmacen alm = new frmAlmacen();
+            alm.ShowDialog();
+        }
+
+        private void transaccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTransaccion tran = new frmTransaccion();
+            tran.ShowDialog();
         }
     }
 }

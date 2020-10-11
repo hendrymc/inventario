@@ -11,55 +11,52 @@ using System.Windows.Forms;
 
 namespace InventarioApp
 {
-    public partial class TipoInventarioGuardar : Form
+    public partial class AlmacenGuardar : Form
     {
         ModelDb db = new ModelDb();
-        public int IdTipoInventario { get; set; }
+
+        public int IdAlmacen { get; set; }
         public string Descripcion { get; set; }
-        public string CuentaContable { get; set; }
         public bool Estado { get; set; }
-        public string Operacion { get; set; }
-        
-        public TipoInventarioGuardar()
+        public string Operacion { get; set;}
+
+        public AlmacenGuardar()
         {
             InitializeComponent();
         }
 
-        private void TipoInventario_Load(object sender, EventArgs e)
+        private void AlmacenGuardar_Load(object sender, EventArgs e)
         {
-            if(Operacion.Equals("E"))
-            {
-                TxtIdTipoInventario.Text = IdTipoInventario.ToString();
-                TxtDescripcion.Text = Descripcion;
-                TxtCuentaContable.Text = CuentaContable;
-                CheckBoxEstado.Checked = Estado;
+             if (Operacion.Equals("E"))
+             {
+                 TxtAlmacen.Text = IdAlmacen.ToString();
+                 TxtDescripcion.Text = Descripcion;
+                 CheckBoxEstado.Checked = Estado;
                 BtnEliminar.Enabled = true;
             }
-            if (Operacion.Equals("C"))
-            {
+            if (Operacion.Equals("C")) {
                 BtnEliminar.Enabled = false;
             }
+            
         }
 
-        private void BtnGuardarTipo_Click(object sender, EventArgs e)
+        private void BtnGuardarAlmacen_Click(object sender, EventArgs e)
         {
             try
             {
                 string sql = "";
                 if (Operacion.Equals("C"))
                 {
-                    sql = "insert into TipoInventario values ('";
+                    sql = "insert into Almacen values ('";
                     sql += TxtDescripcion.Text + "','";
-                    sql += TxtCuentaContable.Text + "','";
                     sql += CheckBoxEstado.Checked + "')";
                 }
                 else
                 {
-                    sql = "update TipoInventario set ";
+                    sql = "update Almacen set ";
                     sql += "Descripcion='" + TxtDescripcion.Text + "',";
-                    sql += "CuentaContable='" + TxtCuentaContable.Text + "',";
                     sql += "Estado='" + CheckBoxEstado.Checked + "' ";
-                    sql += "where IdTipoInventario='" + TxtIdTipoInventario.Text + "'";
+                    sql += "where Almacen='" + TxtAlmacen.Text + "'";
                 }
                 SqlCommand cmd = new SqlCommand(sql, db.con);
                 cmd.ExecuteNonQuery();
@@ -68,7 +65,7 @@ namespace InventarioApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR ACTUALIZANDO EL INVENTARIO." + ex.Message);
+                MessageBox.Show("ERROR ACTUALIZANDO EL ALMACEN." + ex.Message);
             }
         }
 
@@ -76,8 +73,8 @@ namespace InventarioApp
         {
             try
             {
-                string sql = "delete TipoInventario ";
-                sql += "where IdTipoInventario='" + TxtIdTipoInventario.Text + "'";
+                string sql = "delete Almacen ";
+                sql += "where IdAlmacen='" + TxtAlmacen.Text + "'";
 
                 SqlCommand cmd = new SqlCommand(sql, db.con);
                 cmd.ExecuteNonQuery();
@@ -95,14 +92,6 @@ namespace InventarioApp
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

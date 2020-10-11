@@ -39,6 +39,11 @@ namespace InventarioApp
                 CbxTipoInventario.Text = TipoInventario.ToString();
                 TxtCostoUnitario.Text = CostoUnitario.ToString();
                 CheckBoxEstado.Checked = Estado;
+                button3.Enabled = true;
+            }
+            if (Operacion.Equals("C"))
+            {
+                button3.Enabled = false;
             }
         }
 
@@ -80,7 +85,7 @@ namespace InventarioApp
                     sql += NudExistencia.Value + "','";
                     sql += TxtCostoUnitario.Text + "','";
                     sql += CheckBoxEstado.Checked + "','";
-                    sql += CbxTipoInventario.Text + "')";
+                    sql += CbxTipoInventario.Items + "')";
                 }
                 else
                 {
@@ -126,6 +131,16 @@ namespace InventarioApp
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
