@@ -17,7 +17,7 @@ namespace InventarioApp
         public int IdTipoInventario { get; set; }
         public string Descripcion { get; set; }
         public string CuentaContable { get; set; }
-        public bool Estado { get; set; }
+        public string Estado { get; set; }
         public string Operacion { get; set; }
         
         public TipoInventarioGuardar()
@@ -32,7 +32,7 @@ namespace InventarioApp
                 TxtIdTipoInventario.Text = IdTipoInventario.ToString();
                 TxtDescripcion.Text = Descripcion;
                 TxtCuentaContable.Text = CuentaContable;
-                CheckBoxEstado.Checked = Estado;
+                CbxEstado.Text = Estado;
                 BtnEliminar.Enabled = true;
             }
             if (Operacion.Equals("C"))
@@ -51,14 +51,14 @@ namespace InventarioApp
                     sql = "insert into TipoInventario values ('";
                     sql += TxtDescripcion.Text + "','";
                     sql += TxtCuentaContable.Text + "','";
-                    sql += CheckBoxEstado.Checked + "')";
+                    sql += CbxEstado.Text + "')";
                 }
                 else
                 {
                     sql = "update TipoInventario set ";
                     sql += "Descripcion='" + TxtDescripcion.Text + "',";
                     sql += "CuentaContable='" + TxtCuentaContable.Text + "',";
-                    sql += "Estado='" + CheckBoxEstado.Checked + "' ";
+                    sql += "Estado='" + CbxEstado.Text + "' ";
                     sql += "where IdTipoInventario='" + TxtIdTipoInventario.Text + "'";
                 }
                 SqlCommand cmd = new SqlCommand(sql, db.con);

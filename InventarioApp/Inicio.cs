@@ -12,10 +12,13 @@ namespace InventarioApp
 {
     public partial class Inicio : Form
     {
+        Login login = new Login();
+
         public Inicio()
         {
             InitializeComponent();
         }
+
 
         private void existenciasXAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -37,7 +40,7 @@ namespace InventarioApp
 
         private void almacenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void almacenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,5 +54,10 @@ namespace InventarioApp
             frmTransaccion tran = new frmTransaccion();
             tran.ShowDialog();
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
+                

@@ -73,6 +73,16 @@ namespace InventarioApp
             }
         
         }
+
+        internal void ejecutarConsultaBD(string sSQL, DataGridView ItemList)
+        {
+            SqlDataAdapter oDa = new SqlDataAdapter(sSQL, con);
+            DataTable oTable = new DataTable();
+            oDa.Fill(oTable);
+            ItemList.DataSource = oTable;
+            ItemList.Refresh();
+        }
+
         public void GetExistenciasAlmacen(DataGridView ItemList)
         {
             try
@@ -107,6 +117,10 @@ namespace InventarioApp
                 MessageBox.Show("ERROR CONSULTANDO LA BASE DE DATOS. " + ex.Message);
 
             }
+        }
+
+        public void Rol() {
+
         }
     }
 }

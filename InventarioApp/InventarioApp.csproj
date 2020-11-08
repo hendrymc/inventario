@@ -65,6 +65,12 @@
     <Compile Include="ArticulosListar.Designer.cs">
       <DependentUpon>ArticulosListar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArticulosUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticulosUsuario.Designer.cs">
+      <DependentUpon>ArticulosUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,23 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioUsuario.Designer.cs">
+      <DependentUpon>InicioUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventario_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inventario_dbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelDb.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +148,9 @@
     <EmbeddedResource Include="ArticulosListar.resx">
       <DependentUpon>ArticulosListar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ArticulosUsuario.resx">
+      <DependentUpon>ArticulosUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAlmacen.resx">
       <DependentUpon>frmAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +169,12 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InicioUsuario.resx">
+      <DependentUpon>InicioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -159,6 +191,17 @@
     <EmbeddedResource Include="TipoInventarioListar.resx">
       <DependentUpon>TipoInventarioListar.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="inventario_dbDataSet.xsc">
+      <DependentUpon>inventario_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="inventario_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>inventario_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="inventario_dbDataSet.xss">
+      <DependentUpon>inventario_dbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

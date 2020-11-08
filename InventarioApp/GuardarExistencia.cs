@@ -100,6 +100,20 @@ namespace InventarioApp
                 MessageBox.Show("ERROR ELIMINANDO REGISTRO." + ex.Message);
             }
         }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
     }
     

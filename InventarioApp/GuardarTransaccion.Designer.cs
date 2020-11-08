@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnGuardarArticulo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxTipoTransaccion = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TxtCostoUnitario = new System.Windows.Forms.TextBox();
             this.TxtIdArticulo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,9 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cbxTipoTransaccion = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,6 +108,36 @@
             this.panel1.Size = new System.Drawing.Size(403, 228);
             this.panel1.TabIndex = 19;
             // 
+            // cbxTipoTransaccion
+            // 
+            this.cbxTipoTransaccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoTransaccion.FormattingEnabled = true;
+            this.cbxTipoTransaccion.Items.AddRange(new object[] {
+            "Entrada",
+            "Salida",
+            "Traslado",
+            "Ajuste"});
+            this.cbxTipoTransaccion.Location = new System.Drawing.Point(132, 60);
+            this.cbxTipoTransaccion.Name = "cbxTipoTransaccion";
+            this.cbxTipoTransaccion.Size = new System.Drawing.Size(222, 21);
+            this.cbxTipoTransaccion.TabIndex = 17;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(131, 179);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(222, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(132, 100);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(221, 20);
+            this.dateTimePicker1.TabIndex = 15;
+            // 
             // TxtCostoUnitario
             // 
             this.TxtCostoUnitario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -116,6 +146,8 @@
             this.TxtCostoUnitario.Name = "TxtCostoUnitario";
             this.TxtCostoUnitario.Size = new System.Drawing.Size(222, 20);
             this.TxtCostoUnitario.TabIndex = 13;
+            this.TxtCostoUnitario.TextChanged += new System.EventHandler(this.TxtCostoUnitario_TextChanged);
+            this.TxtCostoUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCostoUnitario_KeyPress);
             // 
             // TxtIdArticulo
             // 
@@ -177,36 +209,6 @@
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tipo de transacción";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(132, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(221, 20);
-            this.dateTimePicker1.TabIndex = 15;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(131, 179);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 16;
-            // 
-            // cbxTipoTransaccion
-            // 
-            this.cbxTipoTransaccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoTransaccion.FormattingEnabled = true;
-            this.cbxTipoTransaccion.Items.AddRange(new object[] {
-            "Entrada",
-            "Salida",
-            "Traslado",
-            "Ajuste"});
-            this.cbxTipoTransaccion.Location = new System.Drawing.Point(132, 60);
-            this.cbxTipoTransaccion.Name = "cbxTipoTransaccion";
-            this.cbxTipoTransaccion.Size = new System.Drawing.Size(222, 21);
-            this.cbxTipoTransaccion.TabIndex = 17;
             // 
             // GuardarTransaccion
             // 

@@ -35,19 +35,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.TxtCuentaContable = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.CheckBoxEstado = new System.Windows.Forms.CheckBox();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.TxtIdTipoInventario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.CbxEstado = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnEliminar
             // 
             this.BtnEliminar.Location = new System.Drawing.Point(22, 240);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(84, 32);
             this.BtnEliminar.TabIndex = 22;
@@ -58,7 +58,7 @@
             // BtnCerrar
             // 
             this.BtnCerrar.Location = new System.Drawing.Point(246, 240);
-            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(84, 32);
             this.BtnCerrar.TabIndex = 21;
@@ -80,7 +80,7 @@
             // BtnGuardarTipo
             // 
             this.BtnGuardarTipo.Location = new System.Drawing.Point(341, 240);
-            this.BtnGuardarTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnGuardarTipo.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardarTipo.Name = "BtnGuardarTipo";
             this.BtnGuardarTipo.Size = new System.Drawing.Size(85, 32);
             this.BtnGuardarTipo.TabIndex = 20;
@@ -91,16 +91,16 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.CbxEstado);
             this.panel1.Controls.Add(this.TxtCuentaContable);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.CheckBoxEstado);
             this.panel1.Controls.Add(this.TxtDescripcion);
             this.panel1.Controls.Add(this.TxtIdTipoInventario);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(23, 51);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 175);
             this.panel1.TabIndex = 19;
@@ -110,7 +110,7 @@
             // 
             this.TxtCuentaContable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtCuentaContable.Location = new System.Drawing.Point(165, 97);
-            this.TxtCuentaContable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtCuentaContable.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCuentaContable.Name = "TxtCuentaContable";
             this.TxtCuentaContable.Size = new System.Drawing.Size(222, 20);
             this.TxtCuentaContable.TabIndex = 16;
@@ -125,21 +125,11 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "CUENTA CONTABLE";
             // 
-            // CheckBoxEstado
-            // 
-            this.CheckBoxEstado.AutoSize = true;
-            this.CheckBoxEstado.Location = new System.Drawing.Point(165, 138);
-            this.CheckBoxEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CheckBoxEstado.Name = "CheckBoxEstado";
-            this.CheckBoxEstado.Size = new System.Drawing.Size(15, 14);
-            this.CheckBoxEstado.TabIndex = 14;
-            this.CheckBoxEstado.UseVisualStyleBackColor = true;
-            // 
             // TxtDescripcion
             // 
             this.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtDescripcion.Location = new System.Drawing.Point(165, 60);
-            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(222, 20);
             this.TxtDescripcion.TabIndex = 10;
@@ -149,7 +139,7 @@
             this.TxtIdTipoInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtIdTipoInventario.Enabled = false;
             this.TxtIdTipoInventario.Location = new System.Drawing.Point(165, 21);
-            this.TxtIdTipoInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtIdTipoInventario.Margin = new System.Windows.Forms.Padding(2);
             this.TxtIdTipoInventario.Name = "TxtIdTipoInventario";
             this.TxtIdTipoInventario.ReadOnly = true;
             this.TxtIdTipoInventario.Size = new System.Drawing.Size(221, 13);
@@ -185,6 +175,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "DESCRIPCION";
             // 
+            // CbxEstado
+            // 
+            this.CbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxEstado.FormattingEnabled = true;
+            this.CbxEstado.ItemHeight = 13;
+            this.CbxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.CbxEstado.Location = new System.Drawing.Point(165, 135);
+            this.CbxEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.CbxEstado.Name = "CbxEstado";
+            this.CbxEstado.Size = new System.Drawing.Size(223, 21);
+            this.CbxEstado.TabIndex = 17;
+            // 
             // TipoInventarioGuardar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,7 +199,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnGuardarTipo);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TipoInventarioGuardar";
             this.Text = "FORMULARIO TIPO INVENTARIO";
             this.Load += new System.EventHandler(this.TipoInventario_Load);
@@ -215,11 +219,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TxtCuentaContable;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox CheckBoxEstado;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox TxtIdTipoInventario;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox CbxEstado;
     }
 }

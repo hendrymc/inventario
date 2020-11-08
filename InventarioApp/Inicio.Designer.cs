@@ -111,6 +111,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inicio";
             this.Text = "Sistema de Control de Inventario";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

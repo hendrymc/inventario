@@ -17,7 +17,7 @@ namespace InventarioApp
 
         public int IdAlmacen { get; set; }
         public string Descripcion { get; set; }
-        public bool Estado { get; set; }
+        public string Estado { get; set; }
         public string Operacion { get; set;}
 
         public AlmacenGuardar()
@@ -31,7 +31,7 @@ namespace InventarioApp
              {
                  TxtAlmacen.Text = IdAlmacen.ToString();
                  TxtDescripcion.Text = Descripcion;
-                 CheckBoxEstado.Checked = Estado;
+                 cbxEstado.Text = Estado;
                 BtnEliminar.Enabled = true;
             }
             if (Operacion.Equals("C")) {
@@ -49,14 +49,14 @@ namespace InventarioApp
                 {
                     sql = "insert into Almacen values ('";
                     sql += TxtDescripcion.Text + "','";
-                    sql += CheckBoxEstado.Checked + "')";
+                    sql += cbxEstado.Text + "')";
                 }
                 else
                 {
                     sql = "update Almacen set ";
                     sql += "Descripcion='" + TxtDescripcion.Text + "',";
-                    sql += "Estado='" + CheckBoxEstado.Checked + "' ";
-                    sql += "where Almacen='" + TxtAlmacen.Text + "'";
+                    sql += "Estado='" + cbxEstado.Text + "' ";
+                    sql += "where IdAlmacen='" + TxtAlmacen.Text + "'";
                 }
                 SqlCommand cmd = new SqlCommand(sql, db.con);
                 cmd.ExecuteNonQuery();

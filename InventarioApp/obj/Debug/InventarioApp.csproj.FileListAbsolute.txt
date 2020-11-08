@@ -32,3 +32,6 @@ C:\Users\noel5\source\repos\inventario\InventarioApp\obj\Debug\InventarioApp.frm
 C:\Users\noel5\source\repos\inventario\InventarioApp\obj\Debug\InventarioApp.GuardarExistencia.resources
 C:\Users\noel5\source\repos\inventario\InventarioApp\obj\Debug\InventarioApp.frmTransaccion.resources
 C:\Users\noel5\source\repos\inventario\InventarioApp\obj\Debug\InventarioApp.GuardarTransaccion.resources
+C:\Users\noel5\source\repos\inventario\InventarioApp\obj\Debug\InventarioApp.Login.resources
+C:\Users\noel5\source\repos\inventario\InventarioApp\obj\Debug\InventarioApp.ArticulosUsuario.resources
+C:\Users\noel5\source\repos\inventario\InventarioApp\obj\Debug\InventarioApp.InicioUsuario.resources

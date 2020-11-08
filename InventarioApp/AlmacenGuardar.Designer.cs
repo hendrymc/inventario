@@ -33,12 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnGuardarAlmacen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CheckBoxEstado = new System.Windows.Forms.CheckBox();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.TxtAlmacen = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +88,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.CheckBoxEstado);
+            this.panel1.Controls.Add(this.cbxEstado);
             this.panel1.Controls.Add(this.TxtDescripcion);
             this.panel1.Controls.Add(this.TxtAlmacen);
             this.panel1.Controls.Add(this.label7);
@@ -99,16 +99,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 154);
             this.panel1.TabIndex = 24;
-            // 
-            // CheckBoxEstado
-            // 
-            this.CheckBoxEstado.AutoSize = true;
-            this.CheckBoxEstado.Location = new System.Drawing.Point(165, 114);
-            this.CheckBoxEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.CheckBoxEstado.Name = "CheckBoxEstado";
-            this.CheckBoxEstado.Size = new System.Drawing.Size(15, 14);
-            this.CheckBoxEstado.TabIndex = 14;
-            this.CheckBoxEstado.UseVisualStyleBackColor = true;
             // 
             // TxtDescripcion
             // 
@@ -160,6 +150,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "DESCRIPCION";
             // 
+            // cbxEstado
+            // 
+            this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.ItemHeight = 13;
+            this.cbxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbxEstado.Location = new System.Drawing.Point(163, 106);
+            this.cbxEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(223, 21);
+            this.cbxEstado.TabIndex = 15;
+            // 
             // AlmacenGuardar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,11 +191,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnGuardarAlmacen;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox CheckBoxEstado;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox TxtAlmacen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxEstado;
     }
 }

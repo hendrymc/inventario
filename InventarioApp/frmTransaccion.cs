@@ -60,5 +60,22 @@ namespace InventarioApp
                 MessageBox.Show("ERROR ABRIENDO EL ARTICULO." + ex.Message);
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            GuardarTransaccion FormItem = new GuardarTransaccion();
+            string sSQL = "select * from Transaccion ";
+            sSQL += "where TipoTransaccion";
+            sSQL += " like '%" + txtBusqueda.Text + "%'";
+            sSQL += "or Fecha";
+            sSQL += " like '%" + txtBusqueda.Text + "%'";
+            db.ejecutarConsultaBD(sSQL, DgvTransaccion);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sSQL = "select * from Transaccion ";
+            db.ejecutarConsultaBD(sSQL, DgvTransaccion);
+        }
     }
 }

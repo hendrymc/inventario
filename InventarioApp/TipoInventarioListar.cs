@@ -32,7 +32,7 @@ namespace InventarioApp
                 FormItem.IdTipoInventario = int.Parse(row.Cells[0].Value.ToString());
                 FormItem.Descripcion = row.Cells[1].Value.ToString();
                 FormItem.CuentaContable = row.Cells[2].Value.ToString();
-                FormItem.Estado = (bool)row.Cells[3].Value;
+                FormItem.Estado = row.Cells[3].Value.ToString();
                 FormItem.Operacion = "E";
                 FormItem.ShowDialog();
             }
@@ -57,6 +57,24 @@ namespace InventarioApp
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticulosGuardar FormItem = new ArticulosGuardar();
+            string sSQL = "select * from TipoInventario ";
+            sSQL += "where Descripcion";
+            sSQL += " like '%" + txtBusqueda.Text + "%'";
+            sSQL += " or CuentaContable";
+            sSQL += " like '%" + txtBusqueda.Text + "%'";
+            // sSQL += " order by " + cbxCriterios.SelectedItem;
+            db.ejecutarConsultaBD(sSQL, DgvInventarios);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sSQL = "select * from TipoInventario ";
+            db.ejecutarConsultaBD(sSQL, DgvInventarios);
         }
     }
 }

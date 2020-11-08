@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CheckBoxEstado = new System.Windows.Forms.CheckBox();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.TxtCostoUnitario = new System.Windows.Forms.TextBox();
             this.CbxTipoInventario = new System.Windows.Forms.ComboBox();
             this.NudExistencia = new System.Windows.Forms.NumericUpDown();
@@ -93,7 +93,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.CheckBoxEstado);
+            this.panel1.Controls.Add(this.cbxEstado);
             this.panel1.Controls.Add(this.TxtCostoUnitario);
             this.panel1.Controls.Add(this.CbxTipoInventario);
             this.panel1.Controls.Add(this.NudExistencia);
@@ -106,37 +106,43 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(17, 54);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 260);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // CheckBoxEstado
+            // cbxEstado
             // 
-            this.CheckBoxEstado.AutoSize = true;
-            this.CheckBoxEstado.Location = new System.Drawing.Point(165, 220);
-            this.CheckBoxEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CheckBoxEstado.Name = "CheckBoxEstado";
-            this.CheckBoxEstado.Size = new System.Drawing.Size(15, 14);
-            this.CheckBoxEstado.TabIndex = 14;
-            this.CheckBoxEstado.UseVisualStyleBackColor = true;
+            this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.ItemHeight = 13;
+            this.cbxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbxEstado.Location = new System.Drawing.Point(163, 217);
+            this.cbxEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(223, 21);
+            this.cbxEstado.TabIndex = 14;
             // 
             // TxtCostoUnitario
             // 
             this.TxtCostoUnitario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtCostoUnitario.Location = new System.Drawing.Point(165, 178);
-            this.TxtCostoUnitario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtCostoUnitario.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCostoUnitario.Name = "TxtCostoUnitario";
             this.TxtCostoUnitario.Size = new System.Drawing.Size(222, 20);
             this.TxtCostoUnitario.TabIndex = 13;
+            this.TxtCostoUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCostoUnitario_KeyPress);
             // 
             // CbxTipoInventario
             // 
+            this.CbxTipoInventario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxTipoInventario.FormattingEnabled = true;
             this.CbxTipoInventario.ItemHeight = 13;
             this.CbxTipoInventario.Location = new System.Drawing.Point(165, 138);
-            this.CbxTipoInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CbxTipoInventario.Margin = new System.Windows.Forms.Padding(2);
             this.CbxTipoInventario.Name = "CbxTipoInventario";
             this.CbxTipoInventario.Size = new System.Drawing.Size(223, 21);
             this.CbxTipoInventario.TabIndex = 12;
@@ -144,7 +150,7 @@
             // NudExistencia
             // 
             this.NudExistencia.Location = new System.Drawing.Point(165, 100);
-            this.NudExistencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NudExistencia.Margin = new System.Windows.Forms.Padding(2);
             this.NudExistencia.Name = "NudExistencia";
             this.NudExistencia.Size = new System.Drawing.Size(221, 20);
             this.NudExistencia.TabIndex = 11;
@@ -153,7 +159,7 @@
             // 
             this.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtDescripcion.Location = new System.Drawing.Point(165, 60);
-            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(222, 20);
             this.TxtDescripcion.TabIndex = 10;
@@ -163,7 +169,7 @@
             this.TxtIdArticulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtIdArticulo.Enabled = false;
             this.TxtIdArticulo.Location = new System.Drawing.Point(165, 21);
-            this.TxtIdArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtIdArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.TxtIdArticulo.Name = "TxtIdArticulo";
             this.TxtIdArticulo.ReadOnly = true;
             this.TxtIdArticulo.Size = new System.Drawing.Size(221, 13);
@@ -202,7 +208,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(241, 330);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 32);
             this.button2.TabIndex = 16;
@@ -213,7 +219,7 @@
             // BtnGuardarArticulo
             // 
             this.BtnGuardarArticulo.Location = new System.Drawing.Point(336, 330);
-            this.BtnGuardarArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnGuardarArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardarArticulo.Name = "BtnGuardarArticulo";
             this.BtnGuardarArticulo.Size = new System.Drawing.Size(85, 32);
             this.BtnGuardarArticulo.TabIndex = 15;
@@ -224,7 +230,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(17, 330);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 32);
             this.button3.TabIndex = 17;
@@ -242,7 +248,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnGuardarArticulo);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ArticulosGuardar";
             this.Text = "FORMULARIO DE ARTICULO";
             this.Load += new System.EventHandler(this.ArticulosGuardar_Load);
@@ -266,12 +272,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox CheckBoxEstado;
         private System.Windows.Forms.TextBox TxtCostoUnitario;
         private System.Windows.Forms.ComboBox CbxTipoInventario;
         private System.Windows.Forms.NumericUpDown NudExistencia;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BtnGuardarArticulo;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbxEstado;
     }
 }

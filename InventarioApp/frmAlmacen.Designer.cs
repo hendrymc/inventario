@@ -32,12 +32,18 @@
             this.DgvAlmacen = new System.Windows.Forms.DataGridView();
             this.BtnCrearArticulo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAlmacen)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnRegresar
             // 
-            this.BtnRegresar.Location = new System.Drawing.Point(485, 324);
+            this.BtnRegresar.Location = new System.Drawing.Point(486, 380);
             this.BtnRegresar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRegresar.Name = "BtnRegresar";
             this.BtnRegresar.Size = new System.Drawing.Size(74, 32);
@@ -52,7 +58,7 @@
             this.DgvAlmacen.AllowUserToDeleteRows = false;
             this.DgvAlmacen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvAlmacen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvAlmacen.Location = new System.Drawing.Point(11, 38);
+            this.DgvAlmacen.Location = new System.Drawing.Point(12, 94);
             this.DgvAlmacen.Margin = new System.Windows.Forms.Padding(2);
             this.DgvAlmacen.Name = "DgvAlmacen";
             this.DgvAlmacen.ReadOnly = true;
@@ -65,7 +71,7 @@
             // 
             // BtnCrearArticulo
             // 
-            this.BtnCrearArticulo.Location = new System.Drawing.Point(569, 324);
+            this.BtnCrearArticulo.Location = new System.Drawing.Point(570, 380);
             this.BtnCrearArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCrearArticulo.Name = "BtnCrearArticulo";
             this.BtnCrearArticulo.Size = new System.Drawing.Size(119, 32);
@@ -84,11 +90,60 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "PANEL DE ALMACÉN";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtBusqueda);
+            this.panel1.Location = new System.Drawing.Point(12, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(522, 60);
+            this.panel1.TabIndex = 9;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(359, 4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 51);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Texto a buscar";
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(124, 21);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(203, 20);
+            this.txtBusqueda.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(444, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 51);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Mostrar todo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 364);
+            this.ClientSize = new System.Drawing.Size(696, 423);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.DgvAlmacen);
             this.Controls.Add(this.BtnCrearArticulo);
@@ -98,6 +153,8 @@
             this.Activated += new System.EventHandler(this.frmAlmacen_Activated);
             this.Load += new System.EventHandler(this.frmAlmacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvAlmacen)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +166,10 @@
         private System.Windows.Forms.DataGridView DgvAlmacen;
         private System.Windows.Forms.Button BtnCrearArticulo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -19,7 +19,7 @@ namespace InventarioApp
         public int Existencia { get; set; }
         public string TipoInventario { get; set; }
         public decimal CostoUnitario { get; set; }
-        public bool Estado { get; set; }
+        public string Estado { get; set; }
         public string Operacion { get; set; }
 
         public ArticulosGuardar()
@@ -30,7 +30,9 @@ namespace InventarioApp
         private void ArticulosGuardar_Load(object sender, EventArgs e)
         {
             //RefreshComboBox();
-            
+
+            LlenarArticulo();
+
             if (Operacion.Equals("E"))
             {
                 TxtIdArticulo.Text = IdArticulo.ToString();
@@ -38,7 +40,7 @@ namespace InventarioApp
                 NudExistencia.Value = Existencia;
                 CbxTipoInventario.Text = TipoInventario.ToString();
                 TxtCostoUnitario.Text = CostoUnitario.ToString();
-                CheckBoxEstado.Checked = Estado;
+                cbxEstado.Text = Estado;
                 button3.Enabled = true;
             }
             if (Operacion.Equals("C"))
@@ -84,8 +86,8 @@ namespace InventarioApp
                     sql += TxtDescripcion.Text + "','";
                     sql += NudExistencia.Value + "','";
                     sql += TxtCostoUnitario.Text + "','";
-                    sql += CheckBoxEstado.Checked + "','";
-                    sql += CbxTipoInventario.Items + "')";
+                    sql += cbxEstado.Text + "','";
+                    sql += CbxTipoInventario.Text + "')";
                 }
                 else
                 {
@@ -94,7 +96,7 @@ namespace InventarioApp
                     sql += "Existencia='" + NudExistencia.Value + "',";
                     sql += "IdTipoInventario='" + CbxTipoInventario.Text + "',";
                     sql += "CostoUnitario='" + TxtCostoUnitario.Text + "',";
-                    sql += "Estado='" + CheckBoxEstado.Checked + "' ";
+                    sql += "Estado='" + cbxEstado.Text + "' ";
                     sql += "where IdArticulo='" + TxtIdArticulo.Text + "'";
                 }
                 SqlCommand cmd = new SqlCommand(sql, db.con);
@@ -141,6 +143,31 @@ namespace InventarioApp
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void LlenarArticulo()
+        {
+            string sSQL = "select CuentaContable from TipoInventario";
+            SqlCommand ocmd = new SqlCommand(sSQL, db.con);
+            SqlDataReader reader = ocmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    CbxTipoInventario.Items.Add(reader["CuentaContable"]);
+                }
+                reader.Close();
+            }
+        }
+
+        private void TxtCostoUnitario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

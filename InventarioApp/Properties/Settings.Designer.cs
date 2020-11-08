@@ -22,5 +22,16 @@ namespace InventarioApp.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-11AN0PI\\MSSQLSERVER2;Initial Catalog=inventario_db;Integrated" +
+            " Security=True")]
+        public string inventario_dbConnectionString {
+            get {
+                return ((string)(this["inventario_dbConnectionString"]));
+            }
+        }
     }
 }

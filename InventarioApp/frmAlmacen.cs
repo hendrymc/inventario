@@ -54,7 +54,7 @@ namespace InventarioApp
                 AlmacenGuardar FormItem = new AlmacenGuardar();
                 FormItem.IdAlmacen = int.Parse(row.Cells[0].Value.ToString());
                 FormItem.Descripcion = row.Cells[1].Value.ToString();
-                FormItem.Estado = (bool)row.Cells[2].Value;
+                FormItem.Estado = row.Cells[2].Value.ToString();
                 FormItem.Operacion = "E";
                 FormItem.ShowDialog();
             }
@@ -62,6 +62,21 @@ namespace InventarioApp
             {
                 MessageBox.Show("ERROR ABRIENDO EL ALMACEN." + ex.Message);
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            AlmacenGuardar FormItem = new AlmacenGuardar();
+            string sSQL = "select * from Almacen ";
+            sSQL += "where Descripcion";
+            sSQL += " like '%" + txtBusqueda.Text + "%'";
+            db.ejecutarConsultaBD(sSQL, DgvAlmacen);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sSQL = "select * from Almacen ";
+            db.ejecutarConsultaBD(sSQL, DgvAlmacen);
         }
     }
 }

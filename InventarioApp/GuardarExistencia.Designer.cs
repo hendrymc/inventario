@@ -33,12 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnGuardarArticulo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbdAlmacen = new System.Windows.Forms.ComboBox();
-            this.cbxIdarticulo = new System.Windows.Forms.ComboBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.cbxIdarticulo = new System.Windows.Forms.ComboBox();
+            this.cbdAlmacen = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,24 +101,30 @@
             this.panel1.TabIndex = 19;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label2
+            // txtCantidad
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 23);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "IDAlmacen";
+            this.txtCantidad.Location = new System.Drawing.Point(88, 85);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(221, 20);
+            this.txtCantidad.TabIndex = 16;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
-            // label3
+            // cbxIdarticulo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "IDArticulo";
+            this.cbxIdarticulo.FormattingEnabled = true;
+            this.cbxIdarticulo.Location = new System.Drawing.Point(88, 53);
+            this.cbxIdarticulo.Name = "cbxIdarticulo";
+            this.cbxIdarticulo.Size = new System.Drawing.Size(221, 21);
+            this.cbxIdarticulo.TabIndex = 15;
+            // 
+            // cbdAlmacen
+            // 
+            this.cbdAlmacen.FormattingEnabled = true;
+            this.cbdAlmacen.Location = new System.Drawing.Point(88, 23);
+            this.cbdAlmacen.Name = "cbdAlmacen";
+            this.cbdAlmacen.Size = new System.Drawing.Size(221, 21);
+            this.cbdAlmacen.TabIndex = 14;
             // 
             // label4
             // 
@@ -129,28 +135,24 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Cantidad";
             // 
-            // cbdAlmacen
+            // label3
             // 
-            this.cbdAlmacen.FormattingEnabled = true;
-            this.cbdAlmacen.Location = new System.Drawing.Point(88, 23);
-            this.cbdAlmacen.Name = "cbdAlmacen";
-            this.cbdAlmacen.Size = new System.Drawing.Size(221, 21);
-            this.cbdAlmacen.TabIndex = 14;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "IDArticulo";
             // 
-            // cbxIdarticulo
+            // label2
             // 
-            this.cbxIdarticulo.FormattingEnabled = true;
-            this.cbxIdarticulo.Location = new System.Drawing.Point(88, 53);
-            this.cbxIdarticulo.Name = "cbxIdarticulo";
-            this.cbxIdarticulo.Size = new System.Drawing.Size(221, 21);
-            this.cbxIdarticulo.TabIndex = 15;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(88, 85);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(221, 20);
-            this.txtCantidad.TabIndex = 16;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "IDAlmacen";
             // 
             // GuardarExistencia
             // 
