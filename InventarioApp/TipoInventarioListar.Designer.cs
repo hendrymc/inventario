@@ -33,10 +33,11 @@
             this.BtnCrearInventario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInventarios)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -92,14 +93,25 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BtnExportar);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Location = new System.Drawing.Point(13, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 60);
+            this.panel1.Size = new System.Drawing.Size(597, 60);
             this.panel1.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(437, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 51);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Mostrar todo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnBuscar
             // 
@@ -127,15 +139,15 @@
             this.txtBusqueda.Size = new System.Drawing.Size(203, 20);
             this.txtBusqueda.TabIndex = 0;
             // 
-            // button1
+            // BtnExportar
             // 
-            this.button1.Location = new System.Drawing.Point(437, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 51);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Mostrar todo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnExportar.Location = new System.Drawing.Point(516, 5);
+            this.BtnExportar.Name = "BtnExportar";
+            this.BtnExportar.Size = new System.Drawing.Size(75, 50);
+            this.BtnExportar.TabIndex = 6;
+            this.BtnExportar.Text = "Exportar";
+            this.BtnExportar.UseVisualStyleBackColor = true;
+            this.BtnExportar.Click += new System.EventHandler(this.BtnExportar_Click);
             // 
             // TipoInventarioListar
             // 
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnExportar;
     }
 }

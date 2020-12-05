@@ -20,7 +20,8 @@ namespace InventarioApp
         public int cantidad { get; set; }
         public string IdArticulo { get; set; }
         public string Operacion { get; set; }
-
+        public int Existencia { get; set; }
+        int numero = 0;
         public GuardarTransaccion()
         {
             InitializeComponent();
@@ -42,6 +43,8 @@ namespace InventarioApp
                 textBox1.Text = IdArticulo;
                 TxtCostoUnitario.Text = cantidad.ToString();
                 button3.Enabled = true;
+                MessageBox.Show(Existencia.ToString());
+                RetornarExistencia();
             }
             if (Operacion.Equals("C"))
             {
@@ -56,9 +59,11 @@ namespace InventarioApp
 
         private void BtnGuardarArticulo_Click(object sender, EventArgs e)
         {
+            int numero = 0;
             try
             {
                 string sql = "";
+
                 if (Operacion.Equals("C"))
                 {
                     sql = "insert into Transaccion values ('";
@@ -66,6 +71,19 @@ namespace InventarioApp
                     sql += dateTimePicker1.Value + "','";
                     sql += TxtCostoUnitario.Text + "','";
                     sql += textBox1.Text + "')";
+
+                    if (cbxTipoTransaccion.Text == "Entrada")
+                    {
+                        sql += "update Articulo ";
+                        sql += "set Existencia = Existencia + '" + TxtCostoUnitario.Text + "' ";
+                        sql += "where IdArticulo='" + textBox1.Text + "'";
+                    }
+                    else if (cbxTipoTransaccion.Text == "Salida")
+                    {
+                        sql += "update Articulo ";
+                        sql += "set Existencia = Existencia - '" + TxtCostoUnitario.Text + "' ";
+                        sql += "where IdArticulo='" + textBox1.Text + "'";
+                    }
                 }
                 else
                 {
@@ -75,9 +93,23 @@ namespace InventarioApp
                     sql += "Cantidad='" + TxtCostoUnitario.Text + "',";
                     sql += "IdArticulo='" + textBox1.Text + "' ";
                     sql += "where IdTransaccion='" + TxtIdArticulo.Text + "'";
+
+                    if (cbxTipoTransaccion.Text == "Entrada")
+                    {
+                        sql += "update Articulo ";
+                        sql += "set Existencia = Existencia + '" + TxtCostoUnitario.Text + "' ";
+                        sql += "where IdArticulo='" + textBox1.Text + "'";
+                    }
+                    else if (cbxTipoTransaccion.Text == "Salida")
+                    {
+                        
+                        sql += "update Articulo ";
+                        sql += "set Existencia = Existencia - '" + TxtCostoUnitario.Text + "' ";
+                        sql += "where IdArticulo='" + textBox1.Text + "'";
+                    }
                 }
-                SqlCommand cmd = new SqlCommand(sql, db.con);
-                cmd.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand(sql, db.con);
+                    cmd.ExecuteNonQuery();
                 
                 MessageBox.Show("REGISTRO GUARDADO CON EXITO");
                 this.Close();
@@ -119,6 +151,16 @@ namespace InventarioApp
             {
                 e.Handled = true;
             }
+        }
+        public int RetornarExistencia() {
+           
+
+            string sql = "select Existencia from Articulo where IdArticulo = '" + IdArticulo + "'";
+            SqlCommand cmd = new SqlCommand(sql, db.con);
+            cmd.ExecuteNonQuery();
+            SqlDataReader reader = cmd.ExecuteReader();
+            MessageBox.Show(reader.Read());
+            return 1;
         }
     }
 }

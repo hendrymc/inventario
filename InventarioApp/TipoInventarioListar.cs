@@ -76,5 +76,11 @@ namespace InventarioApp
             string sSQL = "select * from TipoInventario ";
             db.ejecutarConsultaBD(sSQL, DgvInventarios);
         }
+
+        private void BtnExportar_Click(object sender, EventArgs e)
+        {
+            string Inventario = "IdTipoinventario, Descripcion, Cuenta Contable, Estado";
+            db.Exportar(Inventario, "select * from TipoInventario");
+        }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace InventarioApp
@@ -7,7 +10,7 @@ namespace InventarioApp
     public partial class ArticulosListar : Form
     {
         ModelDb db = new ModelDb();
-        
+        DataTable oDt = new DataTable();
 
         public ArticulosListar()
         {
@@ -74,5 +77,13 @@ namespace InventarioApp
             string sSQL = "select * from Articulo ";
             db.ejecutarConsultaBD(sSQL, DgvArticulos);
         }
+
+        private void BtnExportar_Click(object sender, EventArgs e)
+        {
+            string Articulo = "IdArticulo, Descripcion, Existencias, Costo unitario, Estado, IdTipoinventario";
+            db.Exportar(Articulo, "select * from Articulo");
+        }
     }
-}
+
+    }
+

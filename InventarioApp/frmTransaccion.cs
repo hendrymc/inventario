@@ -77,5 +77,11 @@ namespace InventarioApp
             string sSQL = "select * from Transaccion ";
             db.ejecutarConsultaBD(sSQL, DgvTransaccion);
         }
+
+        private void BtnExportar_Click(object sender, EventArgs e)
+        {
+            string Transaccion = "IdTransacción, Tipo transacción, Fecha, Cantidad, IdArticulo";
+            db.Exportar(Transaccion, "select * from Transaccion");
+        }
     }
 }

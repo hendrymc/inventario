@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace InventarioApp
@@ -8,7 +10,7 @@ namespace InventarioApp
     class ModelDb
     {
         public SqlConnection con = null;
-
+       // DataTable dt = new DataTable();
         public ModelDb()
         {
             try
@@ -32,6 +34,7 @@ namespace InventarioApp
                 da.Fill(dt);
                 ItemsList.DataSource = dt;
                 ItemsList.Refresh();
+                
             }
             catch (Exception ex)
             {
@@ -119,8 +122,42 @@ namespace InventarioApp
             }
         }
 
-        public void Rol() {
+        public void Exportar(string Argumento, string query)
+        {
+            string sql = query;
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
+            writeFileHeader(Argumento);
+            
+                foreach (DataRow row in dt.Rows)
+                {
+                    string linea = "";
+                    foreach (DataColumn dc in dt.Columns)
+                    {
+                        linea += row[dc].ToString() + ",";
+                    }
+                    writeFileLine(linea);
+                }
+
+                Process.Start(@"X:\prueba.csv");
+            
+        }
+
+        private void writeFileLine(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.AppendText("X:\\prueba.csv"))
+            {
+                w.WriteLine(pLine);
+            }
+        }
+        private void writeFileHeader(string pLine)
+        {
+            using (System.IO.StreamWriter w = File.CreateText("X:\\prueba.csv"))
+            {
+                w.WriteLine(pLine);
+            }
         }
     }
 }

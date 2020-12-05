@@ -78,5 +78,11 @@ namespace InventarioApp
             string sSQL = "select * from Almacen ";
             db.ejecutarConsultaBD(sSQL, DgvAlmacen);
         }
+
+        private void BtnExportar_Click(object sender, EventArgs e)
+        {
+            string Almacen = "IdAlmacen, Descripcion, Estado";
+            db.Exportar(Almacen, "select * from Almacen");
+        }
     }
 }
