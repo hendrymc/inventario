@@ -21,7 +21,6 @@ namespace InventarioApp
         public string IdArticulo { get; set; }
         public string Operacion { get; set; }
         public int Existencia { get; set; }
-        int numero = 0;
         public GuardarTransaccion()
         {
             InitializeComponent();
@@ -43,8 +42,6 @@ namespace InventarioApp
                 textBox1.Text = IdArticulo;
                 TxtCostoUnitario.Text = cantidad.ToString();
                 button3.Enabled = true;
-                MessageBox.Show(Existencia.ToString());
-                RetornarExistencia();
             }
             if (Operacion.Equals("C"))
             {
@@ -59,7 +56,6 @@ namespace InventarioApp
 
         private void BtnGuardarArticulo_Click(object sender, EventArgs e)
         {
-            int numero = 0;
             try
             {
                 string sql = "";
@@ -124,7 +120,6 @@ namespace InventarioApp
         {
             try
             {
-
                 string sql = "delete Transaccion ";
                 sql += "where IdTransaccion='" + TxtIdArticulo.Text + "'";
 
@@ -151,16 +146,6 @@ namespace InventarioApp
             {
                 e.Handled = true;
             }
-        }
-        public int RetornarExistencia() {
-           
-
-            string sql = "select Existencia from Articulo where IdArticulo = '" + IdArticulo + "'";
-            SqlCommand cmd = new SqlCommand(sql, db.con);
-            cmd.ExecuteNonQuery();
-            SqlDataReader reader = cmd.ExecuteReader();
-            MessageBox.Show(reader.Read());
-            return 1;
         }
     }
 }

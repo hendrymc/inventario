@@ -114,9 +114,7 @@
             this.cbxTipoTransaccion.FormattingEnabled = true;
             this.cbxTipoTransaccion.Items.AddRange(new object[] {
             "Entrada",
-            "Salida",
-            "Traslado",
-            "Ajuste"});
+            "Salida"});
             this.cbxTipoTransaccion.Location = new System.Drawing.Point(132, 60);
             this.cbxTipoTransaccion.Name = "cbxTipoTransaccion";
             this.cbxTipoTransaccion.Size = new System.Drawing.Size(222, 21);
